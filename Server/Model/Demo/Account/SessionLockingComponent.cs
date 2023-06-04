@@ -1,6 +1,7 @@
 ﻿namespace ET
 {
-    public class SessionLockingComponent: Entity, IAwake
+    [ComponentOf(typeof(Session))]
+    public class SessionLockingComponent: Entity, IAwake, IDestroy
     {
         
     }

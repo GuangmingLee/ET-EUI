@@ -1,5 +1,6 @@
 ﻿namespace ET
 {
+    [FriendClass(typeof(TokenComponent))]
     public static class TokenComponentSystem
     {
         public static void Add(this TokenComponent self, long key, string token)
@@ -25,7 +26,7 @@
 
         public static async ETTask TimeOutRemoveKey(this TokenComponent self, long key, string tokenKey)
         {
-            await TimerComponent.Instance.WaitAsync(36000000);
+            await TimerComponent.Instance.WaitAsync(600000);
             string onlineToken = self.Get(key);
             if (!string.IsNullOrEmpty(onlineToken) && onlineToken == tokenKey)
             {
