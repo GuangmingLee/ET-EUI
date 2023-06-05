@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 namespace ET
 {
     [FriendClass(typeof (Account))]
-    public class C2ALoginAccountHandler: AMRpcHandler<C2A_LoginAccount, A2C_LoginAccount>
+    public class C2A_LoginAccountHandler: AMRpcHandler<C2A_LoginAccount, A2C_LoginAccount>
     {
         protected override async ETTask Run(Session session, C2A_LoginAccount request, A2C_LoginAccount response, Action reply)
         {
@@ -34,15 +34,15 @@ namespace ET
 
             if (!Regex.IsMatch(request.AccountName.Trim(), @"^(?=.*[0-9].*)(?=.*[A-Z].*)(?=.*[a-z].*).{6,15}$"))
             {
-                response.Error = ErrorCode.ERR_LoginInfoError;
+                response.Error = ErrorCode.ERR_AccountNameFormError;
                 reply();
                 session.Disconnect().Coroutine();
                 return;
             }
 
-            if (Regex.IsMatch(request.Password.Trim(), @"^(?=.*[0-9].*)(?=.*[A-Z].*)(?=.*[a-z].*).{6,15}$"))
+            if (!Regex.IsMatch(request.Password.Trim(), @"^[A-Za-z0-9]+$"))
             {
-                response.Error = ErrorCode.ERR_LoginInfoError;
+                response.Error = ErrorCode.ERR_PasswordFormError;
                 reply();
                 session.Disconnect().Coroutine();
                 return;
@@ -61,7 +61,7 @@ namespace ET
                         session.AddChild(account);
                         if (account.AccountType == (int)AccountType.BlackList)
                         {
-                            response.Error = ErrorCode.ERR_BlackListError;
+                            response.Error = ErrorCode.ERR_AccountInBlackListError;
                             reply();
                             session.Disconnect().Coroutine();
                             account?.Dispose();
@@ -70,7 +70,7 @@ namespace ET
 
                         if (!account.Password.Equals(request.Password))
                         {
-                            response.Error = ErrorCode.ERR_LoginInfoError;
+                            response.Error = ErrorCode.ERR_LoginPasswordError;
                             reply();
                             session.Disconnect().Coroutine();
                             account?.Dispose();

@@ -16,7 +16,7 @@ namespace ET
 
         public static void ShowWindow(this DlgLogin self, Entity contextData = null)
         {
-        }       
+        }
 
         public static async ETTask OnLoginClickHandler(this DlgLogin self)
         {
@@ -30,11 +30,12 @@ namespace ET
                 if (errorCode != ErrorCode.ERR_Success)
                 {
                     Log.Error($"Error Code is {errorCode}");
+                    return;
                 }
-                else
-                {
-                    Log.Debug("登录成功");
-                }
+
+                Log.Debug("登录成功");
+                self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Login);
+                self.DomainScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Lobby);
             }
             catch (Exception e)
             {
