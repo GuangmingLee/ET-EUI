@@ -29,13 +29,20 @@ namespace ET
 
                 if (errorCode != ErrorCode.ERR_Success)
                 {
-                    Log.Error($"Error Code is {errorCode}");
+                    Log.Error(errorCode.ToString());
+                    return;
+                }
+
+                errorCode = await LoginHelper.GetServerInfos(self.ZoneScene());
+                if (errorCode != ErrorCode.ERR_Success)
+                {
+                    Log.Error(errorCode.ToString());
                     return;
                 }
 
                 Log.Debug("登录成功");
                 self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Login);
-                self.DomainScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Lobby);
+                self.DomainScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Server);
             }
             catch (Exception e)
             {
