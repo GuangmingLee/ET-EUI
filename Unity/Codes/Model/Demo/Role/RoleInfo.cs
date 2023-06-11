@@ -2,10 +2,10 @@
 {
     public enum RoleInfoState
     {
-        Normal =0,
+        Normal = 0,
         Freeze,
     }
-
+    
     public class RoleInfo: Entity, IAwake
     {
         public string Name;

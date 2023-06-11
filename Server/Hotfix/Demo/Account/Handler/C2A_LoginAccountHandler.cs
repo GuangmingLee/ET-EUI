@@ -111,7 +111,7 @@ namespace ET
                     string Token = TimeHelper.ServerNow().ToString() + RandomHelper.RandomNumber(int.MinValue, int.MaxValue).ToString();
                     session.DomainScene().GetComponent<TokenComponent>().Remove(account.Id);
                     session.DomainScene().GetComponent<TokenComponent>().Add(account.Id, Token);
-
+                    Log.Error("登录时的loken为：" + Token.ToString());
                     response.AccountId = account.Id;
                     response.Token = Token;
 

@@ -2,8 +2,8 @@
 
 namespace ET
 {
-    [FriendClassAttribute(typeof(ET.RoleInfo))]
-    public class C2A_CreateRoleHandler : AMRpcHandler<C2A_CreateRole, A2C_CreateRole>
+    [FriendClassAttribute(typeof (ET.RoleInfo))]
+    public class C2A_CreateRoleHandler: AMRpcHandler<C2A_CreateRole, A2C_CreateRole>
     {
         protected override async ETTask Run(Session session, C2A_CreateRole request, A2C_CreateRole response, Action reply)
         {
@@ -27,6 +27,7 @@ namespace ET
             if (token == null || token != request.Token)
             {
                 response.Error = ErrorCode.ERR_TokenError;
+                Log.Debug($"现在的Token为{request.Token}");
                 reply();
                 session?.Disconnect().Coroutine();
                 return;

@@ -20,7 +20,7 @@
         public static void Add(this ServerInfosComponent self, ServerInfo serverInfo)
         {
             self.ServerInfoList.Add(serverInfo);
-            self.CurrentServerId = serverInfo.Id;
+            self.CurrentServerId = (int)serverInfo.Id;
         }
     }
 }

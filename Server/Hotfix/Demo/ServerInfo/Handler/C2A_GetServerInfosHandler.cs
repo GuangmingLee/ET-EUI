@@ -27,7 +27,7 @@ namespace ET
             {
                 response.ServerInfoList.Add(serverInfo.ToMessage());
             }
-
+            reply();
             await ETTask.CompletedTask;
         }
     }
