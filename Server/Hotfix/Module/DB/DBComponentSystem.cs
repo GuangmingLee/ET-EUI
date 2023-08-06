@@ -40,7 +40,6 @@ namespace ET
 	    }
 	    
 	    public static async ETTask<List<T>> Query<T>(this DBComponent self, Expression<Func<T, bool>> filter, string collection = null)
-			    where T : Entity
 	    {
 		    using (await CoroutineLockComponent.Instance.Wait(CoroutineLockType.DB, RandomHelper.RandInt64() % DBComponent.TaskCount))
 		    {
