@@ -28,5 +28,7 @@ namespace ET
 
         public const int ERR_RequestSceneTypeError = 200013; //访问的类型错误
         public const int ERR_NetWorkError = 200014; //网络错误
+
+        public const int ERR_OtherAccountLogin = 200015; //其他账号在登录
     }
 }

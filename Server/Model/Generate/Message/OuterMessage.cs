@@ -772,7 +772,7 @@ namespace ET
 
 	}
 
-	[ResponseType(nameof(R2C_LoginGate))]
+	[ResponseType(nameof(R2C_LoginRealm))]
 	[Message(OuterOpcode.C2R_LoginRealm)]
 	[ProtoContract]
 	public partial class C2R_LoginRealm: Object, IRequest
@@ -859,9 +859,9 @@ namespace ET
 
 	}
 
-	[Message(OuterOpcode.G2C_LoginGateGate)]
+	[Message(OuterOpcode.G2C_LoginGameGate)]
 	[ProtoContract]
-	public partial class G2C_LoginGateGate: Object, IResponse
+	public partial class G2C_LoginGameGate: Object, IResponse
 	{
 		[ProtoMember(90)]
 		public int RpcId { get; set; }
