@@ -1,5 +1,6 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "com.unity.burst": {
       "version": "1.7.4",
       "depth": 1,
@@ -9,6 +10,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> main
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -33,6 +36,7 @@
         "com.unity.test-framework": "1.1.9"
       },
       "url": "https://packages.unity.com"
+<<<<<<< HEAD
     },
     "com.unity.mathematics": {
       "version": "1.2.6",
@@ -77,6 +81,8 @@
         "com.unity.render-pipelines.core": "13.1.9",
         "com.unity.searcher": "4.9.2"
       }
+=======
+>>>>>>> main
     },
     "com.unity.test-framework": {
       "version": "1.1.33",

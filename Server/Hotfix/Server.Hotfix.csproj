@@ -25,6 +25,12 @@
     <Compile Include="..\..\Unity\Codes\Hotfix\Demo\Role\RoleInfoSystem.cs">
       <Link>Demo\Role\RoleInfoSystem.cs</Link>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="..\..\Unity\Codes\Hotfix\Demo\ServerInfo\ServerInfosComponentSystem.cs">
+      <Link>Demo\ServerInfo\ServerInfosComponentSystem.cs</Link>
+    </Compile>
+>>>>>>> main
     <Compile Include="..\..\Unity\Codes\Hotfix\Demo\ServerInfo\ServerInfoSystem.cs">
       <Link>Demo\ServerInfo\ServerInfoSystem.cs</Link>
     </Compile>

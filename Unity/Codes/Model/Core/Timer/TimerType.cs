@@ -7,6 +7,9 @@
         public const int SessionIdleChecker = 1;
         public const int ActorLocationSenderChecker = 2;
         public const int ActorMessageSenderChecker = 3;
+        public const int AccountSessionCheckOutTime = 4;
+
+        public const int PlayerOfflineOutTime = 5;//断线时间
 
         // 不能超过1000
     }

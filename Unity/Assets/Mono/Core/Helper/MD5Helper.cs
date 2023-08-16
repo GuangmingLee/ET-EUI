@@ -1,5 +1,9 @@
 ﻿using System;
 using System.IO;
+<<<<<<< HEAD
+=======
+using System.Linq;
+>>>>>>> main
 using System.Security.Cryptography;
 using System.Text;
 

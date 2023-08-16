@@ -530,9 +530,15 @@ namespace ET
 
 	}
 
+<<<<<<< HEAD
 	[Message(OuterOpcode.A2C_Disconnect)]
 	[ProtoContract]
 	public partial class A2C_Disconnect: Object, IMessage
+=======
+	[Message(OuterOpcode.A2C_DisConnect)]
+	[ProtoContract]
+	public partial class A2C_DisConnect: Object, IMessage
+>>>>>>> main
 	{
 		[ProtoMember(1)]
 		public int Error { get; set; }
@@ -541,7 +547,11 @@ namespace ET
 
 	[Message(OuterOpcode.ServerInfoProto)]
 	[ProtoContract]
+<<<<<<< HEAD
 	public partial class ServerInfoProto: Object
+=======
+	public partial class ServerInfoProto: Object, IMessage
+>>>>>>> main
 	{
 		[ProtoMember(1)]
 		public int Id { get; set; }
@@ -590,7 +600,11 @@ namespace ET
 
 	[Message(OuterOpcode.RoleInfoProto)]
 	[ProtoContract]
+<<<<<<< HEAD
 	public partial class RoleInfoProto: Object
+=======
+	public partial class RoleInfoProto: Object, IMessage
+>>>>>>> main
 	{
 		[ProtoMember(1)]
 		public long Id { get; set; }
@@ -605,6 +619,7 @@ namespace ET
 		public long AccountId { get; set; }
 
 		[ProtoMember(5)]
+<<<<<<< HEAD
 		public long LastLoginTime { get; set; }
 
 		[ProtoMember(6)]
@@ -612,6 +627,15 @@ namespace ET
 
 		[ProtoMember(7)]
 		public int ServerId { get; set; }
+=======
+		public int ServerId { get; set; }
+
+		[ProtoMember(6)]
+		public long LastLoginTime { get; set; }
+
+		[ProtoMember(7)]
+		public long CreateTime { get; set; }
+>>>>>>> main
 
 	}
 
@@ -627,6 +651,7 @@ namespace ET
 		public string Token { get; set; }
 
 		[ProtoMember(2)]
+<<<<<<< HEAD
 		public long AccountId { get; set; }
 
 		[ProtoMember(3)]
@@ -635,6 +660,16 @@ namespace ET
 		[ProtoMember(4)]
 		public int ServerId { get; set; }
 
+=======
+		public string Name { get; set; }
+
+		[ProtoMember(3)]
+		public int ServerId { get; set; }
+
+		[ProtoMember(4)]
+		public long AccountId { get; set; }
+
+>>>>>>> main
 	}
 
 	[Message(OuterOpcode.A2C_CreateRole)]
@@ -663,6 +698,7 @@ namespace ET
 		[ProtoMember(90)]
 		public int RpcId { get; set; }
 
+<<<<<<< HEAD
 		[ProtoMember(1)]
 		public string Token { get; set; }
 
@@ -670,6 +706,15 @@ namespace ET
 		public long AccountId { get; set; }
 
 		[ProtoMember(3)]
+=======
+		[ProtoMember(91)]
+		public string Token { get; set; }
+
+		[ProtoMember(92)]
+		public long AccountId { get; set; }
+
+		[ProtoMember(93)]
+>>>>>>> main
 		public int ServerId { get; set; }
 
 	}
@@ -692,7 +737,11 @@ namespace ET
 
 	}
 
+<<<<<<< HEAD
 	[ResponseType(nameof(A2C_DelteRole))]
+=======
+	[ResponseType(nameof(A2C_DeleteRole))]
+>>>>>>> main
 	[Message(OuterOpcode.C2A_DeleteRole)]
 	[ProtoContract]
 	public partial class C2A_DeleteRole: Object, IRequest
@@ -714,9 +763,15 @@ namespace ET
 
 	}
 
+<<<<<<< HEAD
 	[Message(OuterOpcode.A2C_DelteRole)]
 	[ProtoContract]
 	public partial class A2C_DelteRole: Object, IResponse
+=======
+	[Message(OuterOpcode.A2C_DeleteRole)]
+	[ProtoContract]
+	public partial class A2C_DeleteRole: Object, IResponse
+>>>>>>> main
 	{
 		[ProtoMember(90)]
 		public int RpcId { get; set; }
@@ -732,4 +787,152 @@ namespace ET
 
 	}
 
+<<<<<<< HEAD
+=======
+	[ResponseType(nameof(A2C_GetRealmKey))]
+	[Message(OuterOpcode.C2A_GetRealmKey)]
+	[ProtoContract]
+	public partial class C2A_GetRealmKey: Object, IRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(1)]
+		public string Token { get; set; }
+
+		[ProtoMember(2)]
+		public long AccountId { get; set; }
+
+		[ProtoMember(3)]
+		public int ServerId { get; set; }
+
+	}
+
+	[Message(OuterOpcode.A2C_GetRealmKey)]
+	[ProtoContract]
+	public partial class A2C_GetRealmKey: Object, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(1)]
+		public string RealmKey { get; set; }
+
+		[ProtoMember(2)]
+		public string RealmAddress { get; set; }
+
+	}
+
+	[ResponseType(nameof(R2C_LoginRealm))]
+	[Message(OuterOpcode.C2R_LoginRealm)]
+	[ProtoContract]
+	public partial class C2R_LoginRealm: Object, IRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(1)]
+		public long AccountId { get; set; }
+
+		[ProtoMember(2)]
+		public string RealmTokenKey { get; set; }
+
+	}
+
+	[Message(OuterOpcode.R2C_LoginRealm)]
+	[ProtoContract]
+	public partial class R2C_LoginRealm: Object, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(1)]
+		public string GateSessionKey { get; set; }
+
+		[ProtoMember(2)]
+		public string GateAddress { get; set; }
+
+	}
+
+	[ResponseType(nameof(G2R_GetLoginGateKey))]
+	[Message(OuterOpcode.R2G_GetLoginGateKey)]
+	[ProtoContract]
+	public partial class R2G_GetLoginGateKey: Object, IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(1)]
+		public long AccountId { get; set; }
+
+	}
+
+	[Message(OuterOpcode.G2R_GetLoginGateKey)]
+	[ProtoContract]
+	public partial class G2R_GetLoginGateKey: Object, IActorResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(1)]
+		public string GateSessionKey { get; set; }
+
+	}
+
+	[ResponseType(nameof(G2C_LoginGameGate))]
+	[Message(OuterOpcode.C2G_LoginGameGate)]
+	[ProtoContract]
+	public partial class C2G_LoginGameGate: Object, IRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(1)]
+		public string Key { get; set; }
+
+		[ProtoMember(2)]
+		public long RoleId { get; set; }
+
+		[ProtoMember(3)]
+		public long Account { get; set; }
+
+	}
+
+	[Message(OuterOpcode.G2C_LoginGameGate)]
+	[ProtoContract]
+	public partial class G2C_LoginGameGate: Object, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(1)]
+		public long PlayerId { get; set; }
+
+	}
+
+>>>>>>> main
 }

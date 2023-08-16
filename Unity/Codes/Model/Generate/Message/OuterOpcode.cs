@@ -34,7 +34,11 @@ namespace ET
 		 public const ushort M2C_TransferMap = 10031;
 		 public const ushort C2A_LoginAccount = 10032;
 		 public const ushort A2C_LoginAccount = 10033;
+<<<<<<< HEAD
 		 public const ushort A2C_Disconnect = 10034;
+=======
+		 public const ushort A2C_DisConnect = 10034;
+>>>>>>> main
 		 public const ushort ServerInfoProto = 10035;
 		 public const ushort C2A_GetServerInfos = 10036;
 		 public const ushort A2C_GetServerInfos = 10037;
@@ -44,6 +48,18 @@ namespace ET
 		 public const ushort C2A_GetRoles = 10041;
 		 public const ushort A2C_GetRoles = 10042;
 		 public const ushort C2A_DeleteRole = 10043;
+<<<<<<< HEAD
 		 public const ushort A2C_DelteRole = 10044;
+=======
+		 public const ushort A2C_DeleteRole = 10044;
+		 public const ushort C2A_GetRealmKey = 10045;
+		 public const ushort A2C_GetRealmKey = 10046;
+		 public const ushort C2R_LoginRealm = 10047;
+		 public const ushort R2C_LoginRealm = 10048;
+		 public const ushort R2G_GetLoginGateKey = 10049;
+		 public const ushort G2R_GetLoginGateKey = 10050;
+		 public const ushort C2G_LoginGameGate = 10051;
+		 public const ushort G2C_LoginGameGate = 10052;
+>>>>>>> main
 	}
 }

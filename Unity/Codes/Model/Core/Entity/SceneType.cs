@@ -10,7 +10,11 @@
         Location = 5,
         Map = 6,
         Account = 7,
+<<<<<<< HEAD
         LoginCenter =8,
+=======
+        LoginCenter = 8,
+>>>>>>> main
 
         // 客户端Model层
         Client = 30,

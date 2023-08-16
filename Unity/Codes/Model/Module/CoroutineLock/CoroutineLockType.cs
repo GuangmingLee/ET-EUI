@@ -11,9 +11,19 @@ namespace ET
         public const int Resources = 6;
         public const int ResourcesLoader = 7;
         public const int LoadUIBaseWindows = 8;
+<<<<<<< HEAD
         public const int LoginAccount = 9;
         public const int LoginCenterLock = 10;
         public const int GateLoginLock = 11;
+=======
+        public const int LoginAccountLock = 9;
+        public const int LoginCenterLock = 10;
+        public const int GateLoginLock = 11;
+        public const int CreateRoleLock = 12;
+
+        public const int LoginRealm = 13;
+        public const int LoginGate = 14;
+>>>>>>> main
 
         public const int CreateRole = 12;
         

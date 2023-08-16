@@ -34,6 +34,13 @@
       <Link>Demo\ServerInfo\ServerInfo.cs</Link>
     </Compile>
 
+<<<<<<< HEAD
+=======
+    <Compile Include="..\..\Unity\Codes\Model\Demo\ServerInfo\ServerInfosComponent.cs">
+      <Link>Demo\ServerInfo\ServerInfosComponent.cs</Link>
+    </Compile>
+
+>>>>>>> main
     <Compile Include="..\..\Unity\Codes\Model\Demo\Unit\UnitType.cs">
       <Link>Demo\Unit\UnitType.cs</Link>
     </Compile>

@@ -26,6 +26,7 @@ namespace ET
                     ConstValue.LoginAddress,
                     self.View.E_AccountInputField.GetComponent<InputField>().text,
                     self.View.E_PasswordInputField.GetComponent<InputField>().text);
+<<<<<<< HEAD
 
                 if (errorCode != ErrorCode.ERR_Success)
                 {
@@ -33,6 +34,14 @@ namespace ET
                     return;
                 }
 
+=======
+                if (errorCode != ErrorCode.ERR_Success)
+                {
+                    Log.Error(errorCode.ToString());
+                    return;
+                }
+
+>>>>>>> main
                 errorCode = await LoginHelper.GetServerInfos(self.ZoneScene());
                 if (errorCode != ErrorCode.ERR_Success)
                 {
@@ -40,7 +49,11 @@ namespace ET
                     return;
                 }
 
+<<<<<<< HEAD
                 Log.Debug("登录成功");
+=======
+                //TODO显示登录之后的页面逻辑
+>>>>>>> main
                 self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Login);
                 self.DomainScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Server);
             }
